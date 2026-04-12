@@ -1,5 +1,5 @@
 import { Action, Memory, State, HandlerCallback, ActionResult } from "@elizaos/core";
-import { createCortexClient, CortexNetwork } from "@nosana/kit";
+import { createNosanaClient, NosanaNetwork } from "@nosana/kit";
 import { findTemplate, JobTemplates } from "../templates/Library";
 import { MarketIntelligence } from "../services/MarketIntelligence";
 import { PrivacyEvaluator } from "../evaluators/PrivacyEvaluator";
@@ -34,7 +34,7 @@ export const runComputeJob: Action = {
         const text = message.content.text || "";
         const apiKey = runtime.getSetting("Nosana_API_KEY");
         const networkStr = runtime.getSetting("Nosana_NETWORK") || "mainnet";
-        const network = networkStr === "mainnet" ? CortexNetwork.MAINNET : CortexNetwork.DEVNET;
+        const network = networkStr === "mainnet" ? NosanaNetwork.MAINNET : NosanaNetwork.DEVNET;
 
         if (!apiKey) {
             if (callback) callback({ text: "I need a Nosana_API_KEY to proceed." });
@@ -85,7 +85,7 @@ export const runComputeJob: Action = {
 
             // 5. Dispatch Job
             if (callback) callback({ text: "🚀 [ELIZA] Dispatching compute task to Nosana GPU network..." });
-            const client = createCortexClient(network, {
+            const client = createNosanaClient(network, {
                 api: { apiKey: apiKey as string }
             });
 

@@ -15,7 +15,7 @@ import {
 import NosanaPlugin from "./plugins/nosana-plugin";
 import { v4 as uuidv4 } from "uuid";
 import * as dotenv from "dotenv";
-import { createCortexClient, CortexNetwork } from "@nosana/kit";
+import { createNosanaClient, NosanaNetwork } from "@nosana/kit";
 import { PrivacyEvaluator } from "./plugins/nosana-plugin/evaluators/PrivacyEvaluator";
 
 dotenv.config();

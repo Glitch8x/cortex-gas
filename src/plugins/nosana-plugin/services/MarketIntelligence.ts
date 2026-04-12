@@ -1,4 +1,4 @@
-import { createCortexClient, CortexNetwork } from "@nosana/kit";
+import { createNosanaClient, NosanaNetwork } from "@nosana/kit";
 
 export interface MarketInfo {
     address: string;
@@ -10,8 +10,8 @@ export interface MarketInfo {
 export class MarketIntelligence {
     private client;
 
-    constructor(apiKey: string, network: CortexNetwork = CortexNetwork.MAINNET) {
-        this.client = createCortexClient(network, {
+    constructor(apiKey: string, network: NosanaNetwork = NosanaNetwork.MAINNET) {
+        this.client = createNosanaClient(network, {
             api: { apiKey }
         });
     }

@@ -1,5 +1,5 @@
 import { Evaluator, Memory, State } from "@elizaos/core";
-import { createCortexClient, CortexNetwork } from "@nosana/kit";
+import { createNosanaClient, NosanaNetwork } from "@nosana/kit";
 
 /**
  * Periodically evaluates the status of running Nosana jobs.
@@ -17,7 +17,7 @@ export const jobStatusEvaluator: Evaluator = {
 
     handler: async (runtime: any, _message: Memory, _state?: State): Promise<any> => {
         const apiKey = runtime.getSetting("Nosana_API_KEY") as string;
-        const client = createCortexClient(CortexNetwork.MAINNET, {
+        const client = createNosanaClient(NosanaNetwork.MAINNET, {
             api: { apiKey: apiKey || "" }
         });
 
