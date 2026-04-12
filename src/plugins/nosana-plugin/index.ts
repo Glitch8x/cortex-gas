@@ -1,6 +1,6 @@
 import { Plugin } from "@elizaos/core";
 import { runComputeJob } from "./actions/RunComputeJob";
-import { NosanaProvider } from "./providers/NosanaClient";
+import { NosanaProvider } from "./providers/nosanaClient";
 import { jobStatusEvaluator } from "./evaluators/JobStatusEvaluator";
 
 /**
