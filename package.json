@@ -1,0 +1,49 @@
+{
+  "name": "cortex-gas",
+  "version": "1.0.0",
+  "description": "Autonomous Gas Optimizer & Neural Arbitrage Agent powered by ElizaOS v2 and Nosana GPU Network.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "dev:full": "npm run dev",
+    "clean:ports": "taskkill /F /IM ts-node.exe /T 2>nul & taskkill /F /IM node.exe /T 2>nul || exit 0",
+    "dev:robust": "npm run clean:ports && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "solana",
+    "nosana",
+    "elizaos",
+    "ai-agent",
+    "gas-optimizer",
+    "arbitrage",
+    "gpu-compute",
+    "cortex-network"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@elizaos/core": "^2.0.0-alpha.77",
+    "@nosana/kit": "^2.2.4",
+    "@solana/kit": "^5.4.0",
+    "@types/node": "^25.5.2",
+    "concurrently": "^9.2.1",
+    "esbuild": "^0.28.0",
+    "http-server": "^14.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "@types/express": "^5.0.0",
+    "@types/cors": "^2.8.17",
+    "@types/body-parser": "^1.19.5"
+  },
+  "dependencies": {
+    "bs58": "^6.0.0",
+    "tweetnacl": "^1.0.3",
+    "express": "^4.21.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.3"
+  }
+}
