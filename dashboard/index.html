@@ -429,41 +429,46 @@
                 </div>
             </div>
 
-            <!-- Col 3: Cognition & Reports -->
+            <!-- Col 3: Institutional Audit -->
             <div class="col-span-12 lg:col-span-5 flex flex-col gap-4">
-                <h2 class="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] ml-2">Cognitive Reasoning & Audit</h2>
+                <h2 class="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] ml-2">Institutional Security Audit</h2>
                 <div class="flex flex-col gap-4 flex-1">
-                    <!-- Reasoning -->
-                    <div class="terminal-card bg-zinc-950 p-6 rounded-[32px] flex-1 border border-white/5 relative overflow-hidden">
-                         <div class="flex justify-between items-center mb-4">
-                             <span class="text-[9px] font-black text-white/30 uppercase tracking-[0.3em] flex items-center gap-2">
-                                 <i data-lucide="brain-circuit" class="w-3 h-3"></i> Agent Reasoner
-                             </span>
-                             <span class="text-[8px] font-bold text-emerald-400 uppercase bg-emerald-500/10 px-2 py-0.5 rounded-full">Secure Pathing</span>
-                         </div>
-                         <div id="agent-internal-logs" class="space-y-3 text-[10px] font-mono leading-relaxed overflow-y-auto h-[140px] pr-3 custom-scrollbar-dark"></div>
-                    </div>
+                    <!-- PDF Security (Primary) -->
+                    <div class="terminal-card bg-zinc-50 p-8 rounded-[40px] ring-1 ring-black/5 shadow-inner flex flex-col justify-between flex-1">
+                         <div class="space-y-8">
+                             <div class="flex justify-between items-center border-b border-black/5 pb-4">
+                                 <span class="text-[12px] font-black text-zinc-500 uppercase tracking-[0.3em] flex items-center gap-3">
+                                     <i data-lucide="shield-check" class="w-5 h-5 text-emerald-500"></i> Active Security Trace
+                                 </span>
+                                 <span class="text-[10px] font-black text-orange-600 bg-orange-100 px-4 py-1.5 rounded-full uppercase tracking-widest flex items-center gap-2">TEE-ISO</span>
+                             </div>
+                             
+                             <div class="grid grid-cols-1 gap-6">
+                                 <div class="p-6 rounded-3xl bg-white shadow-sm ring-1 ring-black/5 flex items-center justify-between">
+                                     <div>
+                                         <div class="text-[9px] font-black text-zinc-400 uppercase tracking-[0.2em] mb-1">Encryption Protocol</div>
+                                         <div class="text-lg font-black text-zinc-950">AES-256 (GCM/TEEA)</div>
+                                     </div>
+                                     <i data-lucide="lock" class="w-6 h-6 text-zinc-200"></i>
+                                 </div>
+                                 <div class="p-6 rounded-3xl bg-white shadow-sm ring-1 ring-black/5 flex items-center justify-between">
+                                     <div>
+                                         <div class="text-[9px] font-black text-zinc-400 uppercase tracking-[0.2em] mb-1">Compute Isolation</div>
+                                         <div class="text-lg font-black text-emerald-600 uppercase">Cortex GPU Forge V2</div>
+                                     </div>
+                                     <i data-lucide="cpu" class="w-6 h-6 text-emerald-100"></i>
+                                 </div>
+                             </div>
 
-                    <!-- PDF Security -->
-                    <div class="terminal-card bg-zinc-50 p-6 rounded-[32px] ring-1 ring-black/5 shadow-inner flex flex-col justify-between">
-                         <div class="space-y-4">
-                             <div class="flex justify-between items-center border-b border-black/5 pb-3">
-                                 <span class="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em]">Security Audit</span>
-                                 <span class="text-[9px] font-black text-orange-600 bg-orange-100 px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-2">TEE-ISO</span>
-                             </div>
-                             <div class="grid grid-cols-2 gap-4">
-                                 <div class="p-3 rounded-xl bg-white shadow-sm ring-1 ring-black/5">
-                                     <div class="text-[7px] font-black text-zinc-400 uppercase tracking-[0.2em] mb-1">Encrypted</div>
-                                     <div class="text-[9px] font-black text-zinc-900">AES-256 (GCM)</div>
-                                 </div>
-                                 <div class="p-3 rounded-xl bg-white shadow-sm ring-1 ring-black/5">
-                                     <div class="text-[7px] font-black text-zinc-400 uppercase tracking-[0.2em] mb-1">Compute</div>
-                                     <div class="text-[9px] font-black text-emerald-600 uppercase">GPU Forge v2</div>
-                                 </div>
+                             <div class="p-6 rounded-3xl bg-zinc-900 shadow-2xl text-white/90">
+                                 <p class="text-[12px] font-bold leading-relaxed">
+                                    Our institutional-grade TEE environment ensures that all cognitive pathing and bridging remains entirely confidential within the decentralized GPU network.
+                                 </p>
                              </div>
                          </div>
-                         <button onclick="downloadAuditPDF()" class="w-full py-4 rounded-2xl bg-zinc-950 text-white text-[10px] font-black uppercase hover:bg-black transition-all shadow-2xl active:scale-95 mt-6 group">
-                             Generate Institutional Audit (PDF) <i data-lucide="arrow-right-to-line" class="w-4 h-4 inline-block ml-2 group-hover:translate-x-1 transition-transform"></i>
+                         
+                         <button onclick="downloadAuditPDF()" class="w-full py-6 rounded-3xl bg-zinc-950 text-white text-[12px] font-black uppercase hover:bg-black transition-all shadow-2xl active:scale-95 mt-10 group flex items-center justify-center gap-3">
+                             GENERATE INSTITUTIONAL AUDIT (PDF) <i data-lucide="arrow-right-to-line" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                          </button>
                     </div>
                 </div>
