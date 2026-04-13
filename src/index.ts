@@ -373,6 +373,17 @@ CONFIDENTIAL | Cortex GPU NETWORK
                         `• **GPU Load:** 88.4% (Cortex Mainnet)\n` +
                         `• **Gas Saved (Cumulative):** $4,284.12\n\n` +
                         `🚀 **Engine Status:** All neural paths are operating at peak throughput.`;
+                } else if (lowerText.includes("bridge") || lowerText.includes("relay") || lowerText.includes("cross-chain")) {
+                    agentText = `**Cortex Cross-Chain Relay Activated**\n\n` +
+                                `🌉 **Bridging Intelligence**\n` +
+                                `• **Optimized Path:** Solana -> Base (via Relay.link)\n` +
+                                `• **Execution Speed:** Estimated < 10 seconds.\n` +
+                                `• **Fee Efficiency:** 95% lower than standard bridges.\n\n` +
+                                `🚀 **Cortex Verdict:** Relay identifies the most capital-efficient route for your liquidity.`;
+                    
+                    fulfillmentLink = "https://relay.link/bridge/solana";
+                    platformColor = "bg-indigo-600 text-white";
+                    dex = "Relay (Bridge)";
                 } else {
                     // Default High-fidelity Market Intelligence Reasoning (Responsible & Analytical)
                     agentText = `**Synthesis Complete.** Cortex Forge identifies optimal GPU node paths.\n\n` +
