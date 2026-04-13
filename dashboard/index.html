@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CortexGas | Autonomous Gas Intelligence</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%2310b981%22 /><path d=%22M30 50 L50 30 L70 50 L50 70 Z%22 fill=%22white%22 /></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -623,9 +624,20 @@
         async function sendMessage() {
             const val = promptInput.value.trim(); if (!val) return;
             addMessage(val, 'user'); promptInput.value = '';
+            
+            // Add Thinking... Bubble
+            const thinkingDiv = document.createElement('div');
+            thinkingDiv.className = `flex flex-col items-start gap-1 w-full animate-pulse`;
+            thinkingDiv.innerHTML = `<div class="bubble p-5 rounded-2xl text-[11px] font-bold bg-white text-zinc-400 border border-black/5 italic flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-bounce"></div> Cortex Node handshaking...</div>`;
+            if (messageFeed) { messageFeed.appendChild(thinkingDiv); messageFeed.scrollTop = messageFeed.scrollHeight; }
+
             try {
                 const res = await fetch('/api/message', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ message: val }) });
                 const data = await res.json();
+                
+                // Remove Thinking...
+                if (thinkingDiv) thinkingDiv.remove();
+
                 if (data.text) {
                     const agentDiv = addMessage(data.text, 'agent');
                     if (data.fulfillment) {
@@ -639,7 +651,7 @@
                         agentDiv.querySelector('.bubble').appendChild(b);
                     }
                 }
-            } catch(e) {}
+            } catch(e) { if (thinkingDiv) thinkingDiv.remove(); }
         }
 
         // --- WALLET CONNECT (REAL MULTI-WALLET FORGE) ---
