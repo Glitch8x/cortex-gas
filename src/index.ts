@@ -26,7 +26,7 @@ dotenv.config();
  */
 async function main() {
     const app = express();
-    const port = 3000;
+    const port = process.env.PORT || 3000;
     const logBuffer: any[] = [];
     const jobStore = new Map<string, any>();
 
@@ -470,7 +470,7 @@ CONFIDENTIAL | Cortex GPU NETWORK
         res.json(logBuffer);
     });
 
-    app.listen(port, '0.0.0.0', () => {
+    app.listen(Number(port), '0.0.0.0', () => {
         console.log(`\n💎 CortexGas | Autonomous Engine`);
         console.log(`📡 Dashboard API: http://127.0.0.1:${port}`);
         console.log(`🚀 ElizaOS Agent Runtime: ONLINE\n`);
