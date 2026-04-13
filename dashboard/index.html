@@ -641,23 +641,58 @@
         }
 
         function executeRelayBridgeMain() {
+            const btn = event.currentTarget;
             const amount = document.getElementById('swap-amount-main')?.value || '0';
-            addLog(`[SYSTEM] CROSS-CHAIN OPTIMIZER INITIATED: VOLUME ${amount} SOL`, "system");
-            window.open('https://relay.link/bridge/solana', '_blank');
+            const originalHTML = btn.innerHTML;
+            
+            btn.disabled = true;
+            btn.innerHTML = `<div class="flex items-center gap-3"><div class="w-4 h-4 border-2 border-zinc-950 border-t-transparent rounded-full animate-spin"></div> CALCULATING ROUTE...</div>`;
+            
+            addLog(`[SYSTEM] INITIATING CROSS-CHAIN RELAY: ${amount} SOL`, "system");
+            
+            setTimeout(() => {
+                addLog(`[SYSTEM] OPTIMAL PATH FOUND VIA CORTEX-LINK.`, "system");
+                window.open('https://relay.link/bridge/solana', '_blank');
+                btn.disabled = false;
+                btn.innerHTML = originalHTML;
+            }, 2500);
         }
 
         async function sendMessage() {
             const val = promptInput.value.trim(); if (!val) return;
             addMessage(val, 'user'); promptInput.value = '';
             
-            // Add Thinking... Bubble
+            // Add Thinking... Bubble with Multi-Step Logic
             const thinkingDiv = document.createElement('div');
             thinkingDiv.className = `flex flex-col items-start gap-1 w-full animate-pulse`;
-            thinkingDiv.innerHTML = `<div class="bubble p-5 rounded-2xl text-[11px] font-bold bg-white text-zinc-400 border border-black/5 italic flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-bounce"></div> Cortex Node handshaking...</div>`;
+            thinkingDiv.innerHTML = `<div class="bubble p-5 rounded-2xl text-[11px] font-black bg-white text-zinc-400 border border-black/5 flex items-center gap-3">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></div> 
+                <span id="thinking-status">INITIATING COGNITIVE SCAN...</span>
+            </div>`;
             if (messageFeed) { messageFeed.appendChild(thinkingDiv); messageFeed.scrollTop = messageFeed.scrollHeight; }
 
+            const statusEl = thinkingDiv.querySelector('#thinking-status');
+            const statuses = [
+                "HANDSHAKING WITH GPU NODE...",
+                "OPTIMIZING EXECUTION VECTORS...",
+                "FINALIZING COGNITIVE RESPONSE..."
+            ];
+            
+            let statusIdx = 0;
+            const statusInt = setInterval(() => {
+                if (statusEl && statusIdx < statuses.length) {
+                    statusEl.innerText = statuses[statusIdx++];
+                }
+            }, 1000);
+
             try {
-                const res = await fetch('/api/message', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ message: val }) });
+                // Minimum 3s delay for the "Cool" factor
+                const [res] = await Promise.all([
+                    fetch('/api/message', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ message: val }) }),
+                    new Promise(resolve => setTimeout(resolve, 3200))
+                ]);
+                
+                clearInterval(statusInt);
                 const data = await res.json();
                 
                 // Remove Thinking...
@@ -676,7 +711,10 @@
                         agentDiv.querySelector('.bubble').appendChild(b);
                     }
                 }
-            } catch(e) { if (thinkingDiv) thinkingDiv.remove(); }
+            } catch(e) { 
+                clearInterval(statusInt);
+                if (thinkingDiv) thinkingDiv.remove(); 
+            }
         }
 
         // --- WALLET CONNECT (REAL MULTI-WALLET FORGE) ---
