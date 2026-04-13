@@ -251,58 +251,58 @@
             <div class="terminal-card flex-1 rounded-[48px] bg-white ring-1 ring-black/5 shadow-2xl overflow-hidden flex flex-col items-center justify-center p-12 relative">
                 <div class="absolute inset-0 bg-grid-slate-900/[0.02] bg-[size:30px_30px]"></div>
                 
-                <div class="relative z-10 w-full max-w-4xl flex flex-col gap-8">
-                     <div class="flex justify-between items-end mb-4">
+                <div class="relative z-10 w-full max-w-5xl flex flex-col gap-8">
+                     <div class="flex justify-between items-end mb-8">
                          <div>
                              <h4 class="text-4xl font-black text-zinc-950 outfit uppercase tracking-tighter">Cortex Relay Bridge</h4>
-                             <p class="text-zinc-500 text-sm font-medium mt-1">Institutional liquidity bridging across Solana and EVM mainnets.</p>
+                             <p class="text-zinc-500 text-[13px] font-bold mt-1 uppercase tracking-widest opacity-60">Institutional liquidity bridging across Solana and EVM mainnets.</p>
                          </div>
                          <div class="flex flex-col items-end">
-                             <div class="px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-black uppercase tracking-widest border border-emerald-100 animate-pulse">Node 0x42 Verified</div>
+                             <div class="px-5 py-2 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-black uppercase tracking-widest border border-emerald-100 animate-pulse">Node 0x42 Verified</div>
                          </div>
                      </div>
 
                      <!-- Enhanced Swap UI -->
-                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-zinc-50/50 p-10 rounded-[40px] border border-black/5 backdrop-blur-sm shadow-inner">
+                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch bg-zinc-50/50 p-12 rounded-[48px] border border-black/5 backdrop-blur-sm shadow-inner">
                          <!-- FROM -->
-                         <div class="flex flex-col gap-4">
-                             <label class="text-[10px] font-black text-zinc-400 uppercase tracking-widest ml-1">Origin Network</label>
-                             <div class="flex items-center gap-4 p-6 rounded-3xl bg-white shadow-xl ring-1 ring-black/5 hover:ring-emerald-500/30 transition-all group">
-                                 <div class="w-12 h-12 rounded-2xl bg-[#14F195] flex items-center justify-center text-xl font-black text-zinc-950 shadow-lg">S</div>
+                         <div class="flex flex-col gap-5">
+                             <label class="text-[11px] font-black text-zinc-400 uppercase tracking-[0.2em] ml-1">Origin Network</label>
+                             <div class="flex items-center gap-6 p-8 rounded-[32px] bg-white shadow-xl ring-1 ring-black/5 hover:ring-emerald-500/30 transition-all group h-full">
+                                 <div class="w-16 h-16 rounded-2xl bg-[#14F195] flex items-center justify-center text-2xl font-black text-zinc-950 shadow-lg">S</div>
                                  <div class="flex flex-col flex-1">
-                                     <span class="text-xs font-bold text-zinc-400 uppercase tracking-widest">Solana</span>
-                                     <input id="swap-amount-main" type="number" placeholder="0.00" class="text-3xl font-black text-zinc-950 outline-none bg-transparent placeholder-zinc-100">
+                                     <span class="text-xs font-black text-zinc-400 uppercase tracking-widest">Solana</span>
+                                     <input id="swap-amount-main" type="number" placeholder="0.00" class="text-4xl font-black text-zinc-950 outline-none bg-transparent placeholder-zinc-100 mt-1">
                                  </div>
                              </div>
                          </div>
 
                          <!-- TO -->
-                         <div class="flex flex-col gap-4">
-                             <label class="text-[10px] font-black text-zinc-400 uppercase tracking-widest ml-1">Destination Forge</label>
-                             <div class="flex items-center gap-4 p-6 rounded-3xl bg-white shadow-xl ring-1 ring-black/5 hover:ring-indigo-500/30 transition-all cursor-pointer group">
-                                 <div class="w-12 h-12 rounded-2xl bg-[#0052FF] flex items-center justify-center text-xl font-black text-white shadow-lg">B</div>
+                         <div class="flex flex-col gap-5">
+                             <label class="text-[11px] font-black text-zinc-400 uppercase tracking-[0.2em] ml-1">Destination Forge</label>
+                             <div class="flex items-center gap-6 p-8 rounded-[32px] bg-white shadow-xl ring-1 ring-black/5 hover:ring-indigo-500/30 transition-all cursor-pointer group h-full">
+                                 <div class="w-16 h-16 rounded-2xl bg-[#0052FF] flex items-center justify-center text-2xl font-black text-white shadow-lg">B</div>
                                  <div class="flex flex-col flex-1">
-                                     <span class="text-xs font-bold text-zinc-400 uppercase tracking-widest">Base Network</span>
-                                     <span class="text-2xl font-black text-zinc-950">USDC (Optimized)</span>
+                                     <span class="text-xs font-black text-zinc-400 uppercase tracking-widest">Base Network</span>
+                                     <span class="text-3xl font-black text-zinc-950 mt-1">USDC (Base)</span>
                                  </div>
-                                 <i data-lucide="chevron-down" class="w-6 h-6 text-zinc-300 group-hover:text-indigo-400 transition-colors"></i>
+                                 <i data-lucide="chevron-down" class="w-8 h-8 text-zinc-300 group-hover:text-indigo-400 transition-colors"></i>
                              </div>
                          </div>
                      </div>
 
-                     <div class="flex items-center justify-between p-8 rounded-[32px] bg-zinc-900 shadow-3xl text-white">
-                         <div class="flex gap-10">
+                     <div class="flex items-center justify-between p-10 rounded-[40px] bg-zinc-950 shadow-3xl text-white">
+                         <div class="flex gap-16">
                              <div>
-                                 <div class="text-[9px] font-bold text-white/40 uppercase tracking-widest">Protocol Fee</div>
-                                 <div class="text-lg font-black tracking-tight text-emerald-400">0.00012 SOL</div>
+                                 <div class="text-[10px] font-black text-white/30 uppercase tracking-widest mb-2">Protocol Fee</div>
+                                 <div class="text-2xl font-black tracking-tight text-emerald-400">0.00012 SOL</div>
                              </div>
                              <div>
-                                 <div class="text-[9px] font-bold text-white/40 uppercase tracking-widest">Bridge Time</div>
-                                 <div class="text-lg font-black tracking-tight text-white">~6.4 Seconds</div>
+                                 <div class="text-[10px] font-black text-white/30 uppercase tracking-widest mb-2">Bridge Time</div>
+                                 <div class="text-2xl font-black tracking-tight text-white">~6.4 Seconds</div>
                              </div>
                          </div>
-                         <button onclick="executeRelayBridgeMain()" class="px-12 py-5 rounded-2xl bg-white text-zinc-950 font-black outfit text-sm hover:scale-110 active:scale-95 transition-all shadow-2xl flex items-center gap-3">
-                             EXECUTE CROSS-CHAIN PATH <i data-lucide="zap" class="w-5 h-5 text-emerald-500"></i>
+                         <button onclick="executeRelayBridgeMain()" class="px-14 py-6 rounded-2xl bg-white text-zinc-950 font-black outfit text-sm hover:scale-110 active:scale-95 transition-all shadow-2xl flex items-center gap-4 group">
+                             EXECUTE CROSS-CHAIN PATH <i data-lucide="zap" class="w-6 h-6 text-emerald-500 group-hover:animate-pulse"></i>
                          </button>
                      </div>
                 </div>
@@ -390,90 +390,80 @@
         </div>
 
 
-        <div id="tab-agents" class="hidden flex flex-col gap-4 flex-1 w-full opacity-0 transition-all duration-300 min-h-0">
-            <div class="grid grid-cols-12 gap-6 flex-1">
-                <!-- Left: Identity -->
-                <div class="col-span-4 flex flex-col gap-6">
-                    <h2 class="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] ml-2">Neural Link Status</h2>
-                    <div class="terminal-card bg-white p-6 rounded-[40px] flex-1 flex flex-col items-center text-center shadow-sm border border-black/5 relative overflow-hidden group min-h-0">
-                        <!-- Pulse Orb -->
-                        <div class="w-32 h-32 rounded-full bg-emerald-50 relative flex items-center justify-center mb-8">
-                            <div class="absolute inset-0 rounded-full border-4 border-emerald-500/20 animate-ping"></div>
-                            <i data-lucide="cpu" class="w-12 h-12 text-emerald-500 relative z-10 group-hover:rotate-12 transition-transform"></i>
-                        </div>
-                        <h3 class="text-xl font-black text-zinc-900 outfit uppercase">Cortex Forge Agent</h3>
-                        <div class="flex items-center gap-2 mt-2">
-                             <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                             <span class="text-[10px] font-black text-emerald-600 uppercase tracking-widest">Latency Optimal</span>
-                        </div>
-                        <div class="p-4 rounded-3xl bg-zinc-50 border border-black/5 mt-6">
-                            <p class="text-[13px] text-zinc-500 font-bold leading-relaxed">My neural processors are focusing all bandwidth on the Cortex GPU Forge. I'm ready to optimize your transactions or execute on-chain paths.</p>
-                        </div>
-                        
-                        <!-- Tags -->
-                        <div class="flex flex-wrap justify-center gap-2 mt-8">
-                            <span class="px-3 py-1 bg-zinc-100 rounded-full text-[9px] font-black text-zinc-500 uppercase">Confidential</span>
-                            <span class="px-3 py-1 bg-zinc-100 rounded-full text-[9px] font-black text-zinc-500 uppercase">Efficient</span>
-                            <span class="px-3 py-1 bg-zinc-100 rounded-full text-[9px] font-black text-zinc-500 uppercase">GPU-Direct</span>
-                        </div>
+        <!-- SECTION: SYSTEM AUDIT (Unified System View) -->
+        <div id="tab-agents" class="hidden grid-cols-1 lg:grid-cols-12 gap-5 flex-1 w-full opacity-0 transition-all duration-300 min-h-0">
+            <!-- Col 1: Identity & Security -->
+            <div class="col-span-12 lg:col-span-3 flex flex-col gap-5">
+                <h2 class="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] ml-2">Agent Identity</h2>
+                <div class="terminal-card bg-white p-8 rounded-[48px] flex-1 flex flex-col items-center text-center shadow-lg ring-1 ring-black/5 relative overflow-hidden group">
+                    <div class="w-32 h-32 rounded-full bg-emerald-50 relative flex items-center justify-center mb-8 shadow-inner">
+                        <div class="absolute inset-0 rounded-full border-4 border-emerald-500/20 animate-ping"></div>
+                        <i data-lucide="cpu" class="w-12 h-12 text-emerald-500 relative z-10"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-zinc-950 outfit uppercase">Cortex Forge AI</h3>
+                    <div class="flex items-center gap-2 mt-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-100">
+                         <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                         <span class="text-[9px] font-black text-emerald-600 uppercase tracking-widest">Active Link</span>
+                    </div>
+                    <div class="mt-8 space-y-4">
+                         <div class="p-5 rounded-3xl bg-zinc-50 border border-black/5 text-[12px] text-zinc-500 font-bold leading-relaxed">
+                            Internal GPU neural-link optimized for institutional arbitrage and confidential cross-chain bridging. 
+                         </div>
+                         <div class="flex flex-wrap justify-center gap-2">
+                             <span class="px-4 py-1.5 bg-zinc-100 rounded-full text-[9px] font-black text-zinc-500 uppercase">GPU-Direct</span>
+                             <span class="px-4 py-1.5 bg-zinc-100 rounded-full text-[9px] font-black text-zinc-500 uppercase">TEEA+</span>
+                         </div>
                     </div>
                 </div>
-                
-                <!-- Right: Internal State -->
-                <!-- SECTION: SYSTEM AUDIT (Combined Logs & Security) -->
-        <div id="tab-agents" class="hidden grid-cols-1 lg:grid-cols-12 gap-4 flex-1 w-full opacity-0 transition-all duration-300 min-h-0">
-            <!-- Left: System Ledger -->
-            <div class="col-span-4 flex flex-col gap-3 flex-1 min-h-0 overflow-y-auto">
-                 <h2 class="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] ml-2">System Execution Trace</h2>
-                 <div class="terminal-card bg-zinc-950 p-10 rounded-[40px] border border-white/5 flex-1 custom-scrollbar-dark overflow-y-auto">
-                      <div id="deep-log-feed" class="font-mono text-[11px] text-emerald-500/90 leading-relaxed"></div>
-                 </div>
             </div>
 
-            <!-- Right: Performance & Audit -->
-            <div class="col-span-8 flex flex-col gap-4 flex-1">
-                <h2 class="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] ml-2">Performance Ledger & Trace</h2>
-                <div class="grid grid-cols-2 gap-4 flex-1 min-h-0">
-                    <!-- Reasoning Feed -->
-                    <div class="terminal-card bg-zinc-950 p-6 rounded-[40px] flex flex-col gap-4 border border-white/5 relative overflow-hidden">
-                         <div class="flex justify-between items-center">
-                             <span class="text-[10px] font-black text-white/40 uppercase tracking-widest flex items-center gap-2">
-                                 <i data-lucide="brain-circuit" class="w-3 h-3"></i> Agent Cognition
-                             </span>
-                             <span class="text-[9px] font-bold text-emerald-400 uppercase">Real-Time</span>
-                         </div>
-                         <div id="agent-internal-logs" class="flex-1 space-y-4 text-[11px] font-mono leading-relaxed overflow-y-auto pr-2 custom-scrollbar-dark">
-                             <div class="text-white/60"><span class="text-emerald-500">>></span> Initializing Market Vector Scan...</div>
-                             <div class="text-white/60"><span class="text-emerald-500">>></span> Weighting JUP price impact (0.15% offset)...</div>
-                             <div class="text-white/60"><span class="text-emerald-500">>></span> Cortex GPU Node Forge_X42 assigned.</div>
-                             <div class="text-white/60"><span class="text-emerald-500">>></span> Path Optimization completed in 14ms.</div>
-                         </div>
+            <!-- Col 2: Execution Trace -->
+            <div class="col-span-12 lg:col-span-4 flex flex-col gap-5">
+                <h2 class="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] ml-2">Execution History</h2>
+                <div class="terminal-card bg-zinc-950 p-8 rounded-[48px] flex-1 shadow-2xl relative overflow-hidden border border-white/5">
+                    <div class="absolute top-6 left-8 right-8 flex justify-between items-center opacity-40">
+                         <span class="text-[9px] font-black text-emerald-500 uppercase tracking-[0.4em]">Full System Trace</span>
+                         <i data-lucide="terminal" class="w-4 h-4 text-emerald-500"></i>
                     </div>
-                    
-                    <!-- Security Table -->
-                    <div class="terminal-card bg-zinc-50/50 p-6 rounded-[40px] flex flex-col justify-between border border-black/5 shadow-inner">
+                    <div id="deep-log-feed" class="mt-12 font-mono text-[11px] text-emerald-500/80 leading-relaxed overflow-y-auto h-[calc(100%-60px)] custom-scrollbar-dark pr-4"></div>
+                </div>
+            </div>
+
+            <!-- Col 3: Cognition & Reports -->
+            <div class="col-span-12 lg:col-span-5 flex flex-col gap-5">
+                <h2 class="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] ml-2">Cognitive Reasoning & Audit</h2>
+                <div class="flex flex-col gap-5 flex-1">
+                    <!-- Reasoning -->
+                    <div class="terminal-card bg-zinc-950 p-8 rounded-[40px] flex-1 border border-white/5 relative overflow-hidden">
+                         <div class="flex justify-between items-center mb-6">
+                             <span class="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] flex items-center gap-2">
+                                 <i data-lucide="brain-circuit" class="w-4 h-4"></i> Agent Reasoner
+                             </span>
+                             <span class="text-[9px] font-bold text-emerald-400 uppercase bg-emerald-500/10 px-3 py-1 rounded-full">Secure Pathing</span>
+                         </div>
+                         <div id="agent-internal-logs" class="space-y-4 text-[11px] font-mono leading-relaxed overflow-y-auto h-[180px] pr-4 custom-scrollbar-dark"></div>
+                    </div>
+
+                    <!-- PDF Security -->
+                    <div class="terminal-card bg-zinc-50 p-8 rounded-[40px] ring-1 ring-black/5 shadow-inner flex flex-col justify-between">
                          <div class="space-y-6">
-                             <div class="flex justify-between items-center pb-4 border-b border-black/5">
-                                 <span class="text-[11px] font-black text-zinc-400 uppercase tracking-widest">Security Audit</span>
-                                 <span class="text-[10px] font-black text-orange-600 bg-orange-100 px-3 py-1 rounded-full uppercase flex items-center gap-2"><i data-lucide="shield-check" class="w-3 h-3"></i> TEE Active</span>
+                             <div class="flex justify-between items-center border-b border-black/5 pb-4">
+                                 <span class="text-[11px] font-black text-zinc-500 uppercase tracking-[0.2em]">Security Audit</span>
+                                 <span class="text-[10px] font-black text-orange-600 bg-orange-100 px-4 py-1.5 rounded-full uppercase tracking-widest flex items-center gap-2">TEE-ISO</span>
                              </div>
-                             <div class="space-y-4">
-                                 <div class="flex justify-between text-[13px] font-bold">
-                                     <span class="text-zinc-500 uppercase tracking-widest text-[10px]">Encryption</span>
-                                     <span class="text-zinc-900">AES-256 (TEEA)</span>
+                             <div class="grid grid-cols-2 gap-6">
+                                 <div class="p-4 rounded-2xl bg-white shadow-sm ring-1 ring-black/5">
+                                     <div class="text-[8px] font-black text-zinc-400 uppercase tracking-[0.2em] mb-1">Encrypted</div>
+                                     <div class="text-xs font-black text-zinc-900">AES-256 (GCM)</div>
                                  </div>
-                                 <div class="flex justify-between text-[13px] font-bold">
-                                     <span class="text-zinc-500 uppercase tracking-widest text-[10px]">System Isolation</span>
-                                     <span class="text-emerald-600">TEE Confirmed</span>
-                                 </div>
-                                 <div class="flex justify-between text-[13px] font-bold">
-                                     <span class="text-zinc-500 uppercase tracking-widest text-[10px]">Internal Build</span>
-                                     <span class="text-zinc-900 font-black">GOLD EDITION v2.0</span>
+                                 <div class="p-4 rounded-2xl bg-white shadow-sm ring-1 ring-black/5">
+                                     <div class="text-[8px] font-black text-zinc-400 uppercase tracking-[0.2em] mb-1">Compute</div>
+                                     <div class="text-xs font-black text-emerald-600 uppercase">GPU Forge v2</div>
                                  </div>
                              </div>
                          </div>
-                         <button onclick="downloadAuditPDF()" class="w-full py-5 rounded-2xl bg-zinc-900 text-white text-[11px] font-black uppercase hover:bg-black transition-all shadow-xl active:scale-95 group">
-                             Download Technical Audit (PDF) <i data-lucide="arrow-down-to-line" class="w-4 h-4 inline-block ml-2 group-hover:translate-v-1 transition-transform"></i>
+                         <button onclick="downloadAuditPDF()" class="w-full py-6 rounded-3xl bg-zinc-950 text-white text-[12px] font-black uppercase hover:bg-black transition-all shadow-2xl active:scale-95 mt-8 group">
+                             Generate Institutional Audit (PDF) <i data-lucide="arrow-right-to-line" class="w-5 h-5 inline-block ml-2 group-hover:translate-x-1 transition-transform"></i>
                          </button>
                     </div>
                 </div>
