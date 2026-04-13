@@ -173,10 +173,10 @@
     </header>
 
     <!-- Main Content Container (SPA) -->
-    <main id="tab-content-container" class="flex-1 p-4 overflow-hidden bg-[#FBFDFF] relative flex flex-col min-h-0">
+    <main id="tab-content-container" class="flex-1 p-4 overflow-y-auto bg-[#FBFDFF] relative flex flex-col min-h-0 scroll-smooth custom-scrollbar">
         
         <!-- SECTION: DASHBOARD (Formerly Overview) -->
-        <div id="tab-overview" class="grid grid-cols-1 lg:grid-cols-3 gap-4 flex-1 w-full opacity-100 transition-all duration-300 min-h-0">
+        <div id="tab-overview" class="grid grid-cols-1 lg:grid-cols-3 gap-4 flex-1 w-full opacity-100 translate-y-0 transition-all duration-700 min-h-0">
             <!-- Col 1: Console -->
             <div class="flex flex-col gap-3 flex-1 min-h-0">
                 <h2 class="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] ml-2">Cortex Forge Console</h2>
@@ -246,9 +246,9 @@
         </div>
         
         <!-- SECTION: RELAY (The dedicated Swap Zone) -->
-        <div id="tab-relay" class="hidden flex-col gap-6 flex-1 w-full opacity-0 transition-all duration-300 min-h-0">
+        <div id="tab-relay" class="hidden flex-col gap-6 flex-1 w-full opacity-0 translate-y-4 transition-all duration-700 min-h-0">
             <h2 class="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] ml-2">Cross-Chain Asset Relay</h2>
-            <div class="terminal-card flex-1 rounded-[48px] bg-white ring-1 ring-black/5 shadow-2xl overflow-hidden flex flex-col items-center justify-center p-12 relative">
+            <div class="terminal-card min-h-fit rounded-[48px] bg-white ring-1 ring-black/5 shadow-2xl overflow-hidden flex flex-col items-center p-12 relative">
                 <div class="absolute inset-0 bg-grid-slate-900/[0.02] bg-[size:30px_30px]"></div>
                 
                 <div class="relative z-10 w-full max-w-5xl flex flex-col gap-8">
@@ -309,8 +309,8 @@
             </div>
         </div>
 
-        <!-- SECTION: STRATEGIES -->
-        <div id="tab-strategies" class="hidden flex flex-col gap-4 flex-1 w-full opacity-0 transition-all duration-300 min-h-0">
+        <!-- SECTION: OPTIMIZATION (Strategies Section) -->
+        <div id="tab-strategies" class="hidden flex flex-col gap-4 flex-1 w-full opacity-0 translate-y-4 transition-all duration-700 min-h-0">
             <div class="grid grid-cols-12 gap-10 h-full">
                 <!-- Left: List -->
                 <div class="col-span-5 flex flex-col gap-4 h-full">
@@ -391,7 +391,7 @@
 
 
         <!-- SECTION: SYSTEM AUDIT (Unified System View) -->
-        <div id="tab-agents" class="hidden grid-cols-1 lg:grid-cols-12 gap-5 flex-1 w-full opacity-0 transition-all duration-300 min-h-0">
+        <div id="tab-agents" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-5 flex-1 w-full opacity-0 translate-y-4 transition-all duration-700 min-h-0">
             <!-- Col 1: Identity & Security -->
             <div class="col-span-12 lg:col-span-3 flex flex-col gap-5">
                 <h2 class="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] ml-2">Agent Identity</h2>
@@ -585,12 +585,12 @@
                 const nav = document.getElementById(`nav-${t}`);
                 if (el && nav) {
                     if (t === target) {
-                        el.classList.remove('hidden', 'opacity-0');
-                        el.classList.add('opacity-100');
+                        el.classList.remove('hidden', 'opacity-0', 'translate-y-4');
+                        el.classList.add('opacity-100', 'translate-y-0');
                         nav.classList.add('active-nav');
                     } else {
-                        el.classList.add('hidden', 'opacity-0');
-                        el.classList.remove('opacity-100');
+                        el.classList.add('hidden', 'opacity-0', 'translate-y-4');
+                        el.classList.remove('opacity-100', 'translate-y-0');
                         nav.classList.remove('active-nav');
                     }
                 }
