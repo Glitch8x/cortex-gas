@@ -260,6 +260,9 @@ CONFIDENTIAL | Cortex GPU NETWORK
 
         if (!text) return res.status(400).json({ success: false, error: "Empty payload. Expected 'text' or 'message'." });
 
+        // SIMULATED COGNITIVE DELAY (Wow factor: simulates complex GPU pathing)
+        await new Promise(r => setTimeout(r, 1500));
+
         console.log(`💬 [USER] ${text}`);
 
         const roomId = uuidv4() as UUID;

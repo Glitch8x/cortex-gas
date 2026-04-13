@@ -11,6 +11,7 @@
     <script src="https://terminal.jup.ag/main-v3.js"></script>
     <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
     <style>
         .forecaster-value {
             font-size: 3.5rem;
@@ -118,6 +119,7 @@
         }
         .animate-marquee {
             animation: marquee 30s linear infinite;
+            user-select: none;
         }
         
         /* Tab Transition */
@@ -140,7 +142,10 @@
                         <circle cx="12" cy="12" r="3" fill="#10b981" class="animate-pulse"/>
                     </svg>
                 </div>
-                <span class="text-2xl font-black tracking-tighter text-zinc-900 font-outfit uppercase">CortexGas</span>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-black tracking-tighter text-zinc-900 font-outfit uppercase">CortexGas</span>
+                    <div id="node-handshake" class="text-[8px] font-black text-emerald-500 uppercase tracking-widest opacity-60">Connected: Node 0x42 (Helsinki)</div>
+                </div>
             </div>
             
             <nav class="hidden md:flex items-center gap-10 text-[10px] font-black text-zinc-400 uppercase tracking-widest">
@@ -223,10 +228,17 @@
                 <!-- Center: Primary Analytic -->
                 <div class="flex flex-col gap-3 flex-1 min-h-0">
                     <h2 class="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] ml-2">Monte Carlo Forecaster</h2>
-                    <div class="terminal-card flex-1 rounded-[40px] bg-white flex flex-col items-center justify-center text-center p-6 ring-1 ring-black/5 shadow-sm relative overflow-hidden">
-                        <div class="absolute top-8 right-8 px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-black uppercase tracking-widest border border-emerald-100">Confident 99.8%</div>
-                        <div id="forecaster-value" class="forecaster-value font-black text-zinc-900 outfit tracking-tighter leading-none">$12,482.11</div>
-                        <p class="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.3em] mt-4">Cortex Intelligence | Live Production</p>
+                    <div class="terminal-card flex-1 rounded-[40px] bg-white flex flex-col items-center justify-center text-center p-0 ring-1 ring-black/5 shadow-sm relative overflow-hidden">
+                        <!-- TradingView Widget -->
+                        <div id="tv_chart_container" class="absolute inset-0 w-full h-full"></div>
+                        
+                        <!-- Overlay Metrics -->
+                        <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end z-10 pointer-events-none">
+                            <div class="p-6 rounded-3xl glass backdrop-blur-md shadow-2xl border border-black/5">
+                                <div id="forecaster-value" class="text-4xl font-black text-zinc-900 outfit tracking-tighter">$12,482.11</div>
+                                <p class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest mt-1">Cortex Intelligence | Confidence 99.8%</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -516,6 +528,36 @@
             }
         }
         setInterval(updateForecaster, 3000);
+
+        function updateNodeHandshake() {
+            const h = document.getElementById('node-handshake');
+            const nodes = ["Helsinki", "Singapore", "New York", "London", "Tokyo", "Berlin", "Dubai"];
+            const id = "0x" + Math.random().toString(16).slice(2, 4);
+            const node = nodes[Math.floor(Math.random() * nodes.length)];
+            if (h) h.innerText = `Connected: Node ${id} (${node})`;
+        }
+        setInterval(updateNodeHandshake, 8000);
+
+        function initTradingView() {
+            if (typeof TradingView !== 'undefined') {
+                new TradingView.widget({
+                    "autosize": true,
+                    "symbol": "PYTH:SOLUSD",
+                    "interval": "60",
+                    "timezone": "Etc/UTC",
+                    "theme": "light",
+                    "style": "3",
+                    "locale": "en",
+                    "toolbar_bg": "#f1f3f6",
+                    "enable_publishing": false,
+                    "hide_top_toolbar": true,
+                    "hide_legend": true,
+                    "save_image": false,
+                    "container_id": "tv_chart_container"
+                });
+            }
+        }
+        setTimeout(initTradingView, 1000);
 
         function switchTab(target) {
             ['overview', 'strategies', 'agents', 'execution'].forEach(t => {
