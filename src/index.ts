@@ -325,7 +325,7 @@ CONFIDENTIAL | Cortex GPU NETWORK
 
                 // Pick winner based on GAS + SLIPPAGE
                 const winner = venues.reduce((prev, curr) => (Number(prev.slippage) + Number(prev.gas)) < (Number(curr.slippage) + Number(curr.gas)) ? prev : curr);
-                const dex = winner.name;
+                let dex = winner.name;
                 const savings = (0.002 - Number(winner.gas)).toFixed(5);
                 const forgeNode = isSensitive ? `NODE_CONFIDENTIAL_X` : `Forge_X${Math.floor(Math.random() * 89) + 10}`;
 
