@@ -113,16 +113,6 @@
             padding-bottom: 4px;
         }
 
-        /* Ticker Animation */
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-            animation: marquee 30s linear infinite;
-            user-select: none;
-        }
-        
         /* Tab Transition */
         #tab-content-container > div {
             transition: all 0.3s ease-in-out;
@@ -179,19 +169,6 @@
             </div>
         </div>
     </header>
-
-    <!-- Market Momentum Ticker -->
-    <div class="h-9 bg-zinc-950 border-b border-white/10 flex items-center overflow-hidden whitespace-nowrap z-40">
-        <div class="animate-marquee flex items-center gap-20 px-8">
-            <span class="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] flex items-center gap-3"><i data-lucide="zap" class="w-3.5 h-3.5 text-emerald-400"></i> Cortex 0x42: Optimizing SOL -> USDC (Raydium)</span>
-            <span class="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] flex items-center gap-3"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-blue-400"></i> TEE Logic Verified: 100% Isolation</span>
-            <span class="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] flex items-center gap-3"><i data-lucide="trending-up" class="w-3.5 h-3.5 text-emerald-400"></i> Global Savings: $4,284.12 Today</span>
-            <span class="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] flex items-center gap-3"><i data-lucide="repeat" class="w-3.5 h-3.5 text-purple-400"></i> Relay Bridge: SOL-Base Path Identified</span>
-            <!-- Repeat for seamless loop -->
-            <span class="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] flex items-center gap-3"><i data-lucide="zap" class="w-3.5 h-3.5 text-emerald-400"></i> Cortex 0x42: Optimizing SOL -> USDC (Raydium)</span>
-            <span class="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] flex items-center gap-3"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-blue-400"></i> TEE Logic Verified: 100% Isolation</span>
-        </div>
-    </div>
 
     <!-- Cortex Swap Bar (Persistent Utility) -->
     <div class="h-16 bg-white/40 backdrop-blur-xl border-b border-black/5 flex items-center px-8 gap-6 z-30 shadow-sm sticky top-0">
